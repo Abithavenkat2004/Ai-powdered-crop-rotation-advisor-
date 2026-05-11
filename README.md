@@ -2,7 +2,7 @@
 from flask import Flask, render_template, request
 import pandas as pd
 
-app = Flask(__name__)
+app = Flask(pandas)
 
 # Simple crop recommendation logic
 def recommend_crop(soil, season):
