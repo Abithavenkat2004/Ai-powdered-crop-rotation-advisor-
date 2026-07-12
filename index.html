@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Crop Recommendation</title>
+</head>
+
+<body>
+
+<h1>AI Crop Recommendation</h1>
+
+<form action="/predict" method="POST">
+
+<label>Soil</label>
+
+<select name="soil">
+
+<option>Loamy</option>
+
+<option>Clay</option>
+
+<option>Sandy</option>
+
+</select>
+
+<br><br>
+
+<label>Season</label>
+
+<select name="season">
+
+<option>Summer</option>
+
+<option>Winter</option>
+
+<option>Rainy</option>
+
+</select>
+
+<br><br>
+
+<button type="submit">
+
+Predict Crop
+
+</button>
+
+</form>
+
+{% if crop %}
+
+<h2>Recommended Crop : {{ crop }}</h2>
+
+{% endif %}
+
+</body>
+
+</html>
