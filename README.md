@@ -1,36 +1,18 @@
-from flask import Flask, render_template, request
+# AI Powered Crop Rotation Advisor
 
-app = Flask(__name__)
+This is a Flask web application that recommends crops based on soil type and season.
 
-def recommend_crop(soil, season):
+## Technologies Used
+- Python
+- Flask
+- HTML
 
-    if soil == "Loamy" and season == "Summer":
-        return "Maize"
+## How to Run
 
-    elif soil == "Clay" and season == "Winter":
-        return "Wheat"
-
-    elif soil == "Sandy" and season == "Rainy":
-        return "Groundnut"
-
-    else:
-        return "Rice"
-
-
-@app.route("/")
-def home():
-    return render_template("index.html")
-
-
-@app.route("/predict", methods=["POST"])
-def predict():
-
-    soil = request.form["soil"]
-    season = request.form["season"]
-
-    crop = recommend_crop(soil, season)
-
-    return render_template("index.html", crop=crop)
+```bash
+pip install -r requirements.txt
+python app.py
+```
 
 
 if __name__ == "__main__":
